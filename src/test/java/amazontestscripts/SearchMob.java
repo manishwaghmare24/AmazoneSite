@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SearchMobTest {
+public class SearchMob {
 	@Test
 	public void searchMobile() throws InterruptedException {
 

@@ -27,11 +27,11 @@ public class SearchMobTest {
 
 		WebDriver driver;
 		WebDriverManager.chromedriver().setup();
-		String url = System.getProperty("base.url");
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-		driver.get(url);
+		driver.get("https://www.amazon.in/");
 		// Thread.sleep(3000);
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Samsung Mobile");
 		Thread.sleep(3000);

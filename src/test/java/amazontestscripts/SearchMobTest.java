@@ -141,6 +141,7 @@ public class SearchMobTest {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true)", nxtButton);
+		driver.quit();
 	}
 
 }

@@ -17,14 +17,22 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import util.ExtentReportCall;
 
 public class SearchMobTest {
+	 ExtentReports extent = ExtentReportCall.getInstance();
+     ExtentTest test;
 	@Test
 	public void searchMobile() throws InterruptedException {
-
+       test = extent.createTest("Search Mobile Price and verify the Maximum Price");
 		WebDriver driver;
 		WebDriverManager.chromedriver().setup();
 		
@@ -35,6 +43,7 @@ public class SearchMobTest {
 		// Thread.sleep(3000);
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Samsung Mobile");
 		Thread.sleep(3000);
+		test.log(Status.INFO, "Search Mobile");
 		List<WebElement> search = driver.findElements(
 				By.xpath("//*[@class='left-pane-results-container']//child::div[starts-with(@id,'sac-suggestion')]"));
 
@@ -71,6 +80,7 @@ public class SearchMobTest {
 		}
 
 		// name and details configuration of the mobile phone
+		test.log(Status.INFO, "Hover to Bestseller");
 		WebElement hoverSeller = driver
 				.findElement(By.xpath("//div[@id='nav-xshop-container']//child::*[text()='Bestsellers']"));
 		StringBuilder sb = new StringBuilder();
@@ -122,9 +132,10 @@ public class SearchMobTest {
 
 			priceint.add(Integer.parseInt(pricestr));
 		}
-
-		System.out.println("Max price:" + Collections.max(priceint));
-
+       
+		//System.out.println("Max price:" + Collections.max(priceint));
+		String maxvalue = String.valueOf(Collections.max(priceint));
+         test.log(Status.INFO, "Max value " + maxvalue);
 		LinkedHashMap<String, Integer> productNamePrice = new LinkedHashMap<String, Integer>();
 		int size = Math.min(detail.size(), priceint.size());
 		for (int i = 0; i < size; i++) {
@@ -141,7 +152,9 @@ public class SearchMobTest {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true)", nxtButton);
+		extent.flush();
 		driver.quit();
 	}
+	
 
 }

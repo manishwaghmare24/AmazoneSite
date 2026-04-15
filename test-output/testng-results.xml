@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-15T21:06:18 IST" name="Default suite" finished-at="2026-04-15T21:08:24 IST" duration-ms="126315">
+  <suite started-at="2026-04-16T01:07:23 IST" name="Default suite" finished-at="2026-04-16T01:09:09 IST" duration-ms="106226">
     <groups>
     </groups>
-    <test started-at="2026-04-15T21:06:18 IST" name="Default test" finished-at="2026-04-15T21:08:24 IST" duration-ms="126315">
-      <class name="amazontestscripts.verifyLinksTest">
-        <test-method signature="verifyLinks()[pri:0, instance:amazontestscripts.verifyLinksTest@14cd1699]" started-at="2026-04-15T21:06:18 IST" name="verifyLinks" finished-at="2026-04-15T21:08:24 IST" duration-ms="126224" status="PASS">
+    <test started-at="2026-04-16T01:07:23 IST" name="Default test" finished-at="2026-04-16T01:09:09 IST" duration-ms="106226">
+      <class name="amazontestscripts.SearchMobTest">
+        <test-method signature="searchMobile()[pri:0, instance:amazontestscripts.SearchMobTest@2fb0623e]" started-at="2026-04-16T01:07:23 IST" name="searchMobile" finished-at="2026-04-16T01:09:09 IST" duration-ms="106139" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLinks -->
-      </class> <!-- amazontestscripts.verifyLinksTest -->
+        </test-method> <!-- searchMobile -->
+      </class> <!-- amazontestscripts.SearchMobTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
